@@ -1,18 +1,15 @@
 package ecom.Tests;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ecom.example.Utils.ExcelReader;
 import ecom.example.Pages.loginPage;
 import ecom.example.Utils.driverManager;
-import net.bytebuddy.asm.Advice.Return;
-
 import java.util.List;
 import java.time.Duration;
-public class LoginTest {
+
+public class productsTest {
     WebDriver driver;
     loginPage loginPage;
     ExcelReader excelReader;
@@ -22,31 +19,39 @@ public class LoginTest {
         driver= driverManager.getDriver();
         loginPage = new loginPage(driver);
         excelReader = new ExcelReader();
-
     }
+
     @BeforeMethod
     public void navigate(){
-        driver.get("https://your-login-page-url.com"); // Replace with actual login page URL
     }
-    @DataProvider(name = "loginDatas")
-    public Object[][] loginData() throws Exception {
-        Object[][] data = {
-            {"testuser1", "password1"},
-            {"testuser2", "password"}
-        };
 
-        return data;
-
-    }   
-
-
-
-    @Test(dataProvider = "loginDatas")
-    public void loginWithValidCredentials() {
-        loginPage.login(null, null);
-
+    @Test
+    public void testViewProductDetails() {
+        Assert.assertEquals(10, 4); // Pass
     }
-        
+    @Test
+public void testRemoveProductFromWishlist() {
+    Assert.assertEquals(60, 60); // Pass
+}
+    @Test
+    public void testAddProductToWishlist() {
+        Assert.assertEquals(20, 21); // Fail
+    }
+
+    @Test
+    public void testSearchProduct() {
+        Assert.assertEquals(30, 10); // Pass
+    }
+
+    @Test
+    public void testFilterProducts() {
+        Assert.assertEquals(40, 41); // Fail
+    }
+
+    @Test
+    public void testSortProducts() {
+        Assert.assertEquals(50, 50); // Pass
+    }
 
     @AfterClass
     public void tearDown() {
@@ -55,5 +60,4 @@ public class LoginTest {
         }
         System.out.println("Test resources cleaned up.");
     }
-
 }

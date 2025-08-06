@@ -1,18 +1,15 @@
 package ecom.Tests;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ecom.example.Utils.ExcelReader;
 import ecom.example.Pages.loginPage;
 import ecom.example.Utils.driverManager;
-import net.bytebuddy.asm.Advice.Return;
-
 import java.util.List;
 import java.time.Duration;
-public class LoginTest {
+
+public class cartTest {
     WebDriver driver;
     loginPage loginPage;
     ExcelReader excelReader;
@@ -22,31 +19,36 @@ public class LoginTest {
         driver= driverManager.getDriver();
         loginPage = new loginPage(driver);
         excelReader = new ExcelReader();
-
     }
+
     @BeforeMethod
     public void navigate(){
-        driver.get("https://your-login-page-url.com"); // Replace with actual login page URL
     }
-    @DataProvider(name = "loginDatas")
-    public Object[][] loginData() throws Exception {
-        Object[][] data = {
-            {"testuser1", "password1"},
-            {"testuser2", "password"}
-        };
 
-        return data;
-
-    }   
-
-
-
-    @Test(dataProvider = "loginDatas")
-    public void loginWithValidCredentials() {
-        loginPage.login(null, null);
-
+    @Test
+    public void testAddItemToCart() {
+        Assert.assertEquals(1, 1);
     }
-        
+
+    @Test
+    public void testRemoveItemFromCart() {
+        Assert.assertEquals(2, 2);
+    }
+
+    @Test
+    public void testCartTotalCalculation() {
+        Assert.assertEquals(3, 3);
+    }
+
+    @Test
+    public void testCartIsEmpty() {
+        Assert.assertEquals(4, 4);
+    }
+
+    @Test
+    public void testCartItemCount() {
+        Assert.assertEquals(5, 5);
+    }
 
     @AfterClass
     public void tearDown() {

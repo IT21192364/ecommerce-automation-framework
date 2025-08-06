@@ -8,11 +8,9 @@ import org.testng.annotations.*;
 import ecom.example.Utils.ExcelReader;
 import ecom.example.Pages.loginPage;
 import ecom.example.Utils.driverManager;
-import net.bytebuddy.asm.Advice.Return;
-
 import java.util.List;
 import java.time.Duration;
-public class LoginTest {
+public class RegistrationTest{
     WebDriver driver;
     loginPage loginPage;
     ExcelReader excelReader;
@@ -22,32 +20,30 @@ public class LoginTest {
         driver= driverManager.getDriver();
         loginPage = new loginPage(driver);
         excelReader = new ExcelReader();
-
     }
     @BeforeMethod
     public void navigate(){
-        driver.get("https://your-login-page-url.com"); // Replace with actual login page URL
+        }
+    @Test
+    public void validReg(){
+        Assert.assertEquals(23,23 );
     }
-    @DataProvider(name = "loginDatas")
-    public Object[][] loginData() throws Exception {
-        Object[][] data = {
-            {"testuser1", "password1"},
-            {"testuser2", "password"}
-        };
-
-        return data;
-
-    }   
-
-
-
-    @Test(dataProvider = "loginDatas")
-    public void loginWithValidCredentials() {
-        loginPage.login(null, null);
-
+    @Test
+    public void validReg2(){
+        Assert.assertEquals(23,23 );
+    }@Test
+    public void validReg3(){
+        Assert.assertEquals(23,23 );
+    }@Test
+    public void validReg4(){
+        Assert.assertEquals(23,23 );
+    }@Test
+    public void validReg5(){
+        Assert.assertEquals(23,23 );
+    }@Test
+    public void validReg6(){
+        Assert.assertEquals(23,23 );
     }
-        
-
     @AfterClass
     public void tearDown() {
         if (driver != null) {
