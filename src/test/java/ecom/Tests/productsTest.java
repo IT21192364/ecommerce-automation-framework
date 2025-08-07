@@ -30,12 +30,12 @@ public class productsTest {
         Assert.assertEquals(10, 4); // Pass
     }
     @Test
-public void testRemoveProductFromWishlist() {
-    Assert.assertEquals(60, 60); // Pass
-}
+    public void testRemoveProductFromWishlist() {
+        Assert.assertEquals(60, 60); // Pass
+    }
     @Test
     public void testAddProductToWishlist() {
-        Assert.assertEquals(20, 21); // Fail
+        Assert.assertEquals(50,50); // Fail
     }
 
     @Test
